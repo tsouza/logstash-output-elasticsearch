@@ -60,6 +60,8 @@ module LogStash; module Outputs; class ElasticSearch
 
       # The document ID for the index. Useful for overwriting existing entries in
       # Elasticsearch with the same ID.
+      # This can be dynamic using the `%{foo}` syntax so you can use the value of
+      # another field as an ID.
       mod.config :document_id, :validate => :string
 
       # A routing override to be applied to all processed events.
